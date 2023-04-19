@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://smartbearsoftware.com/repository/maven2/" }
+    }
+}
+
+plugins {
+    id 'java'
+    id 'io.github.daggerok.soapui-testrunner' version '5.3.1-RC-4'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'io.rest-assured:rest-assured:4.2.0'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.11.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+testrunner {
+    projectFile = 'anna-dach-soapui-example-soapui-project.xml'
+    outputFolder = 'build/soapui/'
+}
+test {
+    useJUnitPlatform()
+}
