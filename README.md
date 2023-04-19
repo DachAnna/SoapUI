@@ -12,3 +12,9 @@ assert holder["//ns2:population"] =="46704314"
 assert holder["//ns2:capital"] =="Madrid"
 assert holder["//ns2:currency"] =="EUR"
  ```
+ 
+ Также, реализован тест на метод 
+ ```bash
+/getCountry
+ ```
+ с проверкой статус кода ответа 200 и наличием в ответе города "Madrid"
